@@ -53,9 +53,6 @@ bool Relayer::OnNewMail(MOOSMSG_LIST &NewMail)
 
     if(key == m_incoming_var) 
       m_tally_recd++;
-   
-    if (key == m_incoming_var_2)
-      m_tally_recd++;
   }
   return(true);
 }
@@ -72,13 +69,12 @@ bool Relayer::OnConnectToServer()
 
 
 //------------------------------------------------------------
-// Procedure: RegisterVariable()
+// Procedure: RegisterVariables
+
 void Relayer::RegisterVariables()
 {
   if(m_incoming_var != "")
     Register(m_incoming_var, 0);
-  if(m_incoming_var_2 != "")
-    Register(m_incoming_var_2, 0);
 }
 
 
@@ -91,8 +87,8 @@ bool Relayer::Iterate()
 
   unsigned int i, amt = (m_tally_recd - m_tally_sent);
   for(i=0; i<amt; i++) {
-    m_tally_sent += 10;
-    Notify(m_outgoing_var, m_tally_sent);
+    m_tally_sent++;
+    Notify(m_outgoing_var+9m_tally_sent);
   }
   
   // If this is the first iteration just note the start time, otherwise
@@ -142,9 +138,6 @@ bool Relayer::OnStartUp()
     
     else if(param == "outgoing_var")
       m_outgoing_var = value;
-
-    else if(param == "incoming_var_2")
-      m_incoming_var_2 = value;
   }
 
   RegisterVariables();

@@ -20,10 +20,8 @@ ProcessConfig = ANTLER
   Run = pMarineViewer	@ NewConsole = false
   Run = uProcessWatch @ NewConsole = false
   Run = pHelmIvP      @ NewConsole = false
-  //Run = pOdometry     @ NewConsole = false
+  Run = pOdometry     @ NewConsole = false
 }
-
-//------------------------------------------
 // uSimMarineV22 config block
 
 ProcessConfig = uSimMarineV22
@@ -55,9 +53,9 @@ ProcessConfig = uProcessWatch
   nowatch   = uTermCommand*
   watch_all = true
 }
+//-------------------------------------
 
-//------------------------------------------
-// pHelmIvP config block
+pHelmIvP config block
 
 ProcessConfig = pHelmIvP
 {
@@ -69,7 +67,7 @@ ProcessConfig = pHelmIvP
   Domain     = course:0:359:360
   Domain     = speed:0:4:21
 
-  //IVP_BEHAVIOR_DIR = ../../lib
+  IVP_BEHAVIOR_DIR = ../../lib
 
   ok_skew = any
   start_in_drive = false
@@ -124,7 +122,7 @@ ProcessConfig = pMarineViewer
   hash_shade           = 0.4
   hash_viewable        = true
 
-  scope = ODOMETRY_DIST
+  scope = ODOMETRY_DIST //
 
    // Appcast configuration
   appcast_height       = 75

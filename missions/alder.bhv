@@ -1,0 +1,8 @@
+Behavior = BHV_Waypoint
+{
+  name      = waypoints
+  pwt       = 100
+  updates   = WPT_UPDATE
+  perpetual = true
+
+  points = 0,0 : 50,0 : 50,50 : 0,50

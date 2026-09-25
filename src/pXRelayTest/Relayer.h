@@ -47,7 +47,7 @@ class Relayer : public CMOOSApp
 
   std::string       m_incoming_var;
   std::string       m_outgoing_var;
-
+  std::string       m_incoming_var_2;
   double            m_start_time_postings;
   double            m_start_time_iterations;
 };
